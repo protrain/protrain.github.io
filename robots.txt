@@ -1,0 +1,3 @@
+User-agent: Googlebot-Image
+Disallow: /images/bg.jpg
+Disallow: /images/og.jpg
