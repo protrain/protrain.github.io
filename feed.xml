@@ -1,4 +1,169 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de"><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://protrain.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://protrain.github.io/" rel="alternate" type="text/html" hreflang="de" /><updated>2018-06-26T14:59:10+02:00</updated><id>https://protrain.github.io/</id><title type="html">Programmieren trainieren</title><subtitle>Die Website zum Buch. Mit über 120 Workouts in Java und Python.</subtitle><author><name>Luigi Lo Iacono, Stephan Wiefling, Michael Schneider</name></author><entry><title type="html">Wir programmieren ein Fußballtor</title><link href="https://protrain.github.io/news/2018/06/26/variablen-operatoren.html" rel="alternate" type="text/html" title="Wir programmieren ein Fußballtor" /><published>2018-06-26T10:10:39+02:00</published><updated>2018-06-26T10:10:39+02:00</updated><id>https://protrain.github.io/news/2018/06/26/variablen-operatoren</id><content type="html" xml:base="https://protrain.github.io/news/2018/06/26/variablen-operatoren.html">&lt;p&gt;Im &lt;a href=&quot;https://update.hanser-fachbuch.de/2018/06/wettbewerb-programmieren-trainieren-variablen-und-operatoren/&quot;&gt;zweiten Teil unserer Blogserie auf Hanser
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de"><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://protrain.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://protrain.github.io/" rel="alternate" type="text/html" hreflang="de" /><updated>2018-11-19T09:00:02+01:00</updated><id>https://protrain.github.io/</id><title type="html">Programmieren trainieren</title><subtitle>Die Website zum Buch. Mit über 120 Workouts in Java und Python.</subtitle><author><name>Luigi Lo Iacono, Stephan Wiefling, Michael Schneider</name></author><entry><title type="html">Howto: Buch-Aufgaben ohne Processing lösen</title><link href="https://protrain.github.io/blog/2018/11/19/buch-aufgaben-ohne-processing-howto.html" rel="alternate" type="text/html" title="Howto: Buch-Aufgaben ohne Processing lösen" /><published>2018-11-19T07:53:39+01:00</published><updated>2018-11-19T07:53:39+01:00</updated><id>https://protrain.github.io/blog/2018/11/19/buch-aufgaben-ohne-processing-howto</id><content type="html" xml:base="https://protrain.github.io/blog/2018/11/19/buch-aufgaben-ohne-processing-howto.html">&lt;p&gt;Damit ihr so schnell wie möglich mit dem Programmiertraining loslegen könnt, sind &lt;strong&gt;alle Lösungsvorschläge im Buch für die Entwicklungsumgebung Processing optimiert&lt;/strong&gt;. Processing lässt sich leicht installieren, erlaubt das ballastfreie und sofortige Loslegen, ohne mit Konfigurationswidrigkeiten hadern zu müssen, und beinhaltet Funktionen, mit denen einfache graphische Ausgaben programmiert werden können. Besonders das Zeichnen von Elementen kann in Processing durch die integrierten Funktionen deutlich schneller und leichter umgesetzt werden. Das bedeutet aber auch, dass einige unserer Lösungsvorschläge in der abgedruckten Form nicht in “reinem” Java oder Python funktionieren.&lt;/p&gt;
+
+&lt;p&gt;Für fortgeschrittene Programmierer gibt es aber Wege, wie ihr unsere Aufgaben ohne Processing lösen könnt. Diese beschreiben wir in diesem Blogartikel.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;java&quot;&gt;Java&lt;/h2&gt;
+
+&lt;p&gt;Da Processing auf Java basiert, könnt ihr die Java-Library von Processing (Processing Core) in euer Projekt importieren. Die Macher von Processing haben hierfür &lt;a href=&quot;https://processing.org/tutorials/eclipse/&quot;&gt;eine ausführliche Anleitung geschrieben&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;python&quot;&gt;Python&lt;/h2&gt;
+
+&lt;p&gt;Für Python ist das nicht ganz so einfach anpassbar, da der Python-Mode in Processing vor der Ausführung den Python-Code in Java umwandelt (&lt;a href=&quot;https://github.com/jdf/processing.py&quot;&gt;Quelle&lt;/a&gt;). Folglich existiert aktuell leider keine Möglichkeit, um die integrierten Processing-Funktionen in Python aufzurufen.&lt;/p&gt;
+
+&lt;p&gt;Abseits von Processing existieren für Python jedoch 2D-Zeichenlibraries (z.B. &lt;a href=&quot;https://wiki.python.org/moin/TkInter&quot;&gt;Tkinter&lt;/a&gt;, &lt;a href=&quot;https://www.pygame.org/&quot;&gt;pygame&lt;/a&gt; oder &lt;a href=&quot;https://pypi.org/project/graphics.py/&quot;&gt;graphics.py&lt;/a&gt;). Diese kommen zwar unserer Meinung nach nicht an die Einfachheit von Processing heran, bieten jedoch ähnliche Funktionen. Wir zeigen anhand von Pygame, wie sich damit eine Zeichenaufgabe aus dem Buch in Standard Python 3 umsetzen lässt.&lt;/p&gt;
+
+&lt;h3 id=&quot;beispiel-pygame&quot;&gt;Beispiel: pygame&lt;/h3&gt;
+
+&lt;p&gt;Die Pygame-Programmbibliothek bietet im Gegensatz zu Tkinter auch 2D-Rotationen, weshalb wir sie zur Umsetzung der &lt;a href=&quot;https://github.com/protrain/loesungen/blob/master/loesungen_in_python/04-kontrollstrukturen/aufgabe_W_4_08_windrad/aufgabe_W_4_08_windrad.pyde&quot;&gt;Windrad-Aufgabe&lt;/a&gt; aus dem Kapitel “Kontrollstrukturen” nutzen können. Hierbei werden auch die Grenzen und Möglichkeiten von pygame deutlich.&lt;/p&gt;
+
+&lt;h4 id=&quot;installation&quot;&gt;Installation&lt;/h4&gt;
+
+&lt;p&gt;Installieren können wir pygame in der Kommandozeile über den Python-Paketmanager &lt;strong&gt;pip&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip install pygame
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Alle Klassen und Funktionen von pygame sind in der &lt;a href=&quot;https://www.pygame.org/docs/&quot;&gt;offiziellen Dokumentation&lt;/a&gt; beschrieben. Darüber hinaus sind &lt;a href=&quot;https://www.pygame.org/wiki/tutorials&quot;&gt;auf der offiziellen Website einige Tutorials&lt;/a&gt; zu finden.&lt;/p&gt;
+
+&lt;h4 id=&quot;los-gehts&quot;&gt;Los geht’s&lt;/h4&gt;
+
+&lt;p&gt;Die Initialisierung von pygame ist relativ simpel:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# coding=utf-8&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pygame&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Starte Pygame&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;pygame&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Die Fenstergröße (in Processing wäre das der &lt;code class=&quot;highlighter-rouge&quot;&gt;size()&lt;/code&gt;-Befehl) setzen wir mit:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Definiere Fenstergröße&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;800&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;800&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Setze Abmaße für Bildschirmfenster&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pygame&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_mode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Mit dem hier initialisierten &lt;code class=&quot;highlighter-rouge&quot;&gt;screen&lt;/code&gt;-Objekt können wir später den Inhalt des Bildschirmfensters setzen.&lt;/p&gt;
+
+&lt;p&gt;Die &lt;code class=&quot;highlighter-rouge&quot;&gt;draw()&lt;/code&gt;-Funktion in Processing können wir in Form einer Endlosschleife abbilden:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# Hier folgen dann die weiteren Befehle&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Innerhalb dieser Schleife können wir dann die Fensterinhalte zeichnen. Zunächst definieren wir den Hintergrund des Bildschirmfensters:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;white&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Setze Hintergrund auf Weiß&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;screen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;probleme&quot;&gt;Probleme&lt;/h4&gt;
+
+&lt;p&gt;Da wir &lt;strong&gt;in pygame keinen Bogen mit Farbfüllung zeichnen können&lt;/strong&gt;, verwenden wir im Beispiel stattdessen ein Rechteck.&lt;/p&gt;
+
+&lt;p&gt;Pygame besitzt von sich aus leider keine Funktion zum Verschieben des Koordinatensystems (&lt;code class=&quot;highlighter-rouge&quot;&gt;translate()&lt;/code&gt;-Funktion in Processing). Folglich müssen wir hier selbst die Koordinaten der einzelnen Elemente berechnen. Dies hat auch zur Folge, dass wir das Koordinatensystem nicht drehen können (&lt;code class=&quot;highlighter-rouge&quot;&gt;rotate()&lt;/code&gt;-Befehl in Processing).&lt;/p&gt;
+
+&lt;p&gt;Daher sind Rotationen in pygame nicht so trivial wie in Processing umzusetzen. Nach Beginn der Schleife wie in der Processing-Lösung&lt;/p&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Erzeuge Einzelteile des Windrades&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;sind folgende Schritte notwendig:&lt;/p&gt;
+
+&lt;p&gt;&lt;span&gt;1.&lt;/span&gt; Wir müssen zunächst eine Zeichenfläche (leeres Bild) erzeugen&lt;/p&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Erzeuge neue Zeichenfläche für Windrad-Element (radius x radius)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;surface&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pygame&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Surface&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hoehe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;span&gt;2.&lt;/span&gt; dort entsprechend draufzeichnen&lt;/p&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Setze Hintergrund der Zeichenfläche auf Transparent (blende weiße Farbe aus)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;surface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;surface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_colorkey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Male Rechteck auf die Zeichenfläche&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;pygame&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;surface&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;windrad_farbe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;windrad_abmasse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;span&gt;3.&lt;/span&gt; diese Zeichenfläche dann rotieren&lt;/p&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Rotiere den Bogen um entsprechende Gradzahl&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;winkel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Einfache Rotation durchführen&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Achtung: Ab 90 Grad Rotation verändert pygame die Abmaße unserer&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Zeichenfläche&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;surface&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pygame&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;surface&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;winkel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;span&gt;4.&lt;/span&gt; und diese Zeichenfläche an die entsprechende Position im Fenster zeichnen.&lt;/p&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Rotiere den Bogen um entsprechende Gradzahl&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;winkel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Einfache Rotation durchführen&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Achtung: Ab 90 Grad Rotation verändert pygame die Abmaße unserer&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Zeichenfläche&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;surface&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pygame&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;surface&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;winkel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;span&gt;5.&lt;/span&gt; Ab einer Rotation um 90 Grad werden von pygame die Bildmaße der Zeichenfläche verändert, sodass wir hier Sonderfälle behandeln müssen.&lt;/p&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Berechne Position der gedrehten Zeichenfläche.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# Zeichne unten rechts&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# (obere linke Ecke der Zeichenfläche in der Mitte des Bildes)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;surface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_rect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;topleft&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mitte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# Zeichne unten links&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# (obere rechte Ecke der Zeichenfläche in der Mitte des Bildes)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;surface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_rect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;topright&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mitte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# Zeichne oben links&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# (untere rechte Ecke der Zeichenfläche in der Mitte des Bildes)&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# Wir müssen dabei die Y-Position um die Hälfte der Höhe verschieben, damit&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# wir in der Mitte des Windradflügels sind&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;surface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_rect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bottomright&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mitte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mitte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hoehe&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# Zeichne oben rechts&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# (untere linke Ecke der Zeichenfläche in der Mitte des Bildes)&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# Wir müssen dabei die Y-Position um die Hälfte der Höhe verschieben, damit&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# wir in der Mitte des Windradflügels sind&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;surface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_rect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bottomleft&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mitte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mitte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hoehe&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;span&gt;6.&lt;/span&gt; Schließlich zeichnen wir diese rotierte Zeichenfläche in das Bildschirmfenster:&lt;/p&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Zeichne Fläche in das Bildschirmfenster&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;screen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;surface&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Nach Ende dieser Schleife müssen wir dann noch dafür sorgen, dass die gezeichneten Elemente im Fenster dargestellt werden. Dies erfolgt mit:&lt;/p&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Zeige alle gezeichneten Elemente im Fenster an&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;pygame&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Womit wir folgendes Ergebnis erhalten:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/windrad_pygame.png&quot; alt=&quot;Das 'Windrad' in Pygame&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/protrain/loesungen/blob/master/blogserie-loesungen/windrad-ohne-processing/windrad.py&quot;&gt;Die Lösung haben wir für euch auch auf Github hochgeladen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;fazit&quot;&gt;Fazit&lt;/h2&gt;
+
+&lt;p&gt;Die Lösungen lassen sich auch ohne Processing umsetzen. Allerdings wird sich dann besonders in Python der Schwierigkeitsgrad deutlich erhöhen. Aufgaben mit Rotationen sind damit deutlich schwieriger umzusetzen (Tkinter hat keine integrierte Rotationsfunktion!).&lt;/p&gt;
+
+&lt;p&gt;Wenn ihr allerdings schon die Workouts aus dem Buch in Processing geschafft habt, könnt ihr es natürlich auch mal in “reinem” Java oder Python probieren. Wenn ihr Lösungen ohne Processing umgesetzt habt, stellen wir sie gerne im &lt;a href=&quot;https://github.com/protrain/loesungen&quot;&gt;Github-Repository&lt;/a&gt; zum Buch online.&lt;/p&gt;</content><author><name>Stephan Wiefling, Luigi Lo Iacono</name></author><summary type="html">Damit ihr so schnell wie möglich mit dem Programmiertraining loslegen könnt, sind alle Lösungsvorschläge im Buch für die Entwicklungsumgebung Processing optimiert. Processing lässt sich leicht installieren, erlaubt das ballastfreie und sofortige Loslegen, ohne mit Konfigurationswidrigkeiten hadern zu müssen, und beinhaltet Funktionen, mit denen einfache graphische Ausgaben programmiert werden können. Besonders das Zeichnen von Elementen kann in Processing durch die integrierten Funktionen deutlich schneller und leichter umgesetzt werden. Das bedeutet aber auch, dass einige unserer Lösungsvorschläge in der abgedruckten Form nicht in “reinem” Java oder Python funktionieren. Für fortgeschrittene Programmierer gibt es aber Wege, wie ihr unsere Aufgaben ohne Processing lösen könnt. Diese beschreiben wir in diesem Blogartikel.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://protrain.github.io/images/og.jpg" /></entry><entry><title type="html">Wir programmieren ein Fußballtor</title><link href="https://protrain.github.io/news/2018/06/26/variablen-operatoren.html" rel="alternate" type="text/html" title="Wir programmieren ein Fußballtor" /><published>2018-06-26T10:10:39+02:00</published><updated>2018-06-26T10:10:39+02:00</updated><id>https://protrain.github.io/news/2018/06/26/variablen-operatoren</id><content type="html" xml:base="https://protrain.github.io/news/2018/06/26/variablen-operatoren.html">&lt;p&gt;Im &lt;a href=&quot;https://update.hanser-fachbuch.de/2018/06/wettbewerb-programmieren-trainieren-variablen-und-operatoren/&quot;&gt;zweiten Teil unserer Blogserie auf Hanser
 Update&lt;/a&gt;
 zeichnen wir dieses Mal ein Fußballtor, welches ihr mit &lt;strong&gt;Variablen und
 Operatoren&lt;/strong&gt; gut umsetzen könnt. Außerdem erklären wir euch, wie der Daumen aus
@@ -7,12 +172,12 @@ dem letzten Teil gezeichnet werden kann.&lt;/p&gt;
 &lt;p&gt;Auch dieses Mal kannst du ein selbst-programmiertes Bild einreichen und ein &lt;strong&gt;Buch&lt;/strong&gt; aus
 dem Hause Hanser &lt;strong&gt;gewinnen&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://update.hanser-fachbuch.de/2018/06/wettbewerb-programmieren-trainieren-variablen-und-operatoren/&quot;&gt;Auf Hanser Update kannst du den kompletten Blogartikel lesen&lt;/a&gt;&lt;/p&gt;</content><author><name>Luigi Lo Iacono, Stephan Wiefling, Michael Schneider</name></author><summary type="html">Im zweiten Teil unserer Blogserie auf Hanser Update zeichnen wir dieses Mal ein Fußballtor, welches ihr mit Variablen und Operatoren gut umsetzen könnt. Außerdem erklären wir euch, wie der Daumen aus dem letzten Teil gezeichnet werden kann.</summary></entry><entry><title type="html">Neue Blogserie mit Programmierwettbewerb</title><link href="https://protrain.github.io/news/2018/03/27/erste-schritte.html" rel="alternate" type="text/html" title="Neue Blogserie mit Programmierwettbewerb" /><published>2018-03-27T10:10:39+02:00</published><updated>2018-03-27T10:10:39+02:00</updated><id>https://protrain.github.io/news/2018/03/27/erste-schritte</id><content type="html" xml:base="https://protrain.github.io/news/2018/03/27/erste-schritte.html">&lt;p&gt;Auf &lt;a href=&quot;http://update.hanser-fachbuch.de/?p=9759&quot;&gt;Hanser Update&lt;/a&gt; haben wir eine Blogserie gestartet, bei der du ab jetzt regelmäßig deine Programmierkenntnisse verbessern kannst.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://update.hanser-fachbuch.de/2018/06/wettbewerb-programmieren-trainieren-variablen-und-operatoren/&quot;&gt;Auf Hanser Update kannst du den kompletten Blogartikel lesen&lt;/a&gt;&lt;/p&gt;</content><author><name>Luigi Lo Iacono, Stephan Wiefling, Michael Schneider</name></author><summary type="html">Im zweiten Teil unserer Blogserie auf Hanser Update zeichnen wir dieses Mal ein Fußballtor, welches ihr mit Variablen und Operatoren gut umsetzen könnt. Außerdem erklären wir euch, wie der Daumen aus dem letzten Teil gezeichnet werden kann. Auch dieses Mal kannst du ein selbst-programmiertes Bild einreichen und ein Buch aus dem Hause Hanser gewinnen. Auf Hanser Update kannst du den kompletten Blogartikel lesen</summary></entry><entry><title type="html">Neue Blogserie mit Programmierwettbewerb</title><link href="https://protrain.github.io/news/2018/03/27/erste-schritte.html" rel="alternate" type="text/html" title="Neue Blogserie mit Programmierwettbewerb" /><published>2018-03-27T10:10:39+02:00</published><updated>2018-03-27T10:10:39+02:00</updated><id>https://protrain.github.io/news/2018/03/27/erste-schritte</id><content type="html" xml:base="https://protrain.github.io/news/2018/03/27/erste-schritte.html">&lt;p&gt;Auf &lt;a href=&quot;http://update.hanser-fachbuch.de/?p=9759&quot;&gt;Hanser Update&lt;/a&gt; haben wir eine Blogserie gestartet, bei der du ab jetzt regelmäßig deine Programmierkenntnisse verbessern kannst.&lt;/p&gt;
 
 &lt;p&gt;In der ersten Folge beginnen wir mit ersten Schritten und erzeugen Bilder. Danach kannst du ein selbst-programmiertes Bild einreichen und dein &lt;strong&gt;Buchexemplar&lt;/strong&gt; von “Programmieren trainieren” &lt;strong&gt;gewinnen&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://update.hanser-fachbuch.de/?p=9759&quot;&gt;Hier geht’s zum Artikel auf Hanser Update&lt;/a&gt;&lt;/p&gt;</content><author><name>Luigi Lo Iacono, Stephan Wiefling, Michael Schneider</name></author><summary type="html">Auf Hanser Update haben wir eine Blogserie gestartet, bei der du ab jetzt regelmäßig deine Programmierkenntnisse verbessern kannst.</summary></entry><entry><title type="html">Programmieren trainieren jetzt im Handel</title><link href="https://protrain.github.io/news/2018/03/12/programmieren-trainieren-buch-jetzt-im-handel.html" rel="alternate" type="text/html" title="Programmieren trainieren jetzt im Handel" /><published>2018-03-12T06:30:39+01:00</published><updated>2018-03-12T06:30:39+01:00</updated><id>https://protrain.github.io/news/2018/03/12/programmieren-trainieren-buch-jetzt-im-handel</id><content type="html" xml:base="https://protrain.github.io/news/2018/03/12/programmieren-trainieren-buch-jetzt-im-handel.html">&lt;p&gt;Willkommen auf der Website zum Buch &lt;a href=&quot;/buch-infos/programmieren-trainieren-java-python-lo-iacono-wiefling-schneider.html&quot;&gt;“Programmieren trainieren”&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://update.hanser-fachbuch.de/?p=9759&quot;&gt;Hier geht’s zum Artikel auf Hanser Update&lt;/a&gt;&lt;/p&gt;</content><author><name>Luigi Lo Iacono, Stephan Wiefling, Michael Schneider</name></author><summary type="html">Auf Hanser Update haben wir eine Blogserie gestartet, bei der du ab jetzt regelmäßig deine Programmierkenntnisse verbessern kannst. In der ersten Folge beginnen wir mit ersten Schritten und erzeugen Bilder. Danach kannst du ein selbst-programmiertes Bild einreichen und dein Buchexemplar von “Programmieren trainieren” gewinnen. Hier geht’s zum Artikel auf Hanser Update</summary></entry><entry><title type="html">Programmieren trainieren jetzt im Handel</title><link href="https://protrain.github.io/news/2018/03/12/programmieren-trainieren-buch-jetzt-im-handel.html" rel="alternate" type="text/html" title="Programmieren trainieren jetzt im Handel" /><published>2018-03-12T06:30:39+01:00</published><updated>2018-03-12T06:30:39+01:00</updated><id>https://protrain.github.io/news/2018/03/12/programmieren-trainieren-buch-jetzt-im-handel</id><content type="html" xml:base="https://protrain.github.io/news/2018/03/12/programmieren-trainieren-buch-jetzt-im-handel.html">&lt;p&gt;Willkommen auf der Website zum Buch &lt;a href=&quot;/buch-infos/programmieren-trainieren-java-python-lo-iacono-wiefling-schneider.html&quot;&gt;“Programmieren trainieren”&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Das Buch mit über 120 Workouts in Java und Python ist ab jetzt im Hanser Verlag erhältlich.&lt;/p&gt;
 
-&lt;p&gt;Zu den &lt;a href=&quot;/loesungen/loesungsvorschlaege-fuer-programmieraufgaben-auf-github.html&quot;&gt;Lösungsvorschlägen aus dem Buch&lt;/a&gt; haben wir ein Github-Repository erstellt. Dieses findet ihr ebenfalls auf dieser Homepage.&lt;/p&gt;</content><author><name>Luigi Lo Iacono, Stephan Wiefling, Michael Schneider</name></author><summary type="html">Willkommen auf der Website zum Buch “Programmieren trainieren”.</summary></entry></feed>
+&lt;p&gt;Zu den &lt;a href=&quot;/loesungen/loesungsvorschlaege-fuer-programmieraufgaben-auf-github.html&quot;&gt;Lösungsvorschlägen aus dem Buch&lt;/a&gt; haben wir ein Github-Repository erstellt. Dieses findet ihr ebenfalls auf dieser Homepage.&lt;/p&gt;</content><author><name>Luigi Lo Iacono, Stephan Wiefling, Michael Schneider</name></author><summary type="html">Willkommen auf der Website zum Buch “Programmieren trainieren”. Das Buch mit über 120 Workouts in Java und Python ist ab jetzt im Hanser Verlag erhältlich. Zu den Lösungsvorschlägen aus dem Buch haben wir ein Github-Repository erstellt. Dieses findet ihr ebenfalls auf dieser Homepage.</summary></entry></feed>
